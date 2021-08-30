@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # 每日早9点到晚8点每2小时运行一次
 
-name: 中青自动阅读(文章4)
+name: 中青自动阅读(视频3)
 
 on:
   workflow_dispatch:
@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-      YOUTH_READ: ${{ secrets.YOUTH_READ_011 }}
-      YOUTH_READ2: ${{ secrets.YOUTH_READ_012 }}
-      YOUTH_READ3: ${{ secrets.YOUTH_READ_013 }}
+      YOUTH_READ: ${{ secrets.YOUTH_READ_VIDEO_011 }}
+      YOUTH_READ2: ${{ secrets.YOUTH_READ_VIDEO_012 }}
+      YOUTH_READ3: ${{ secrets.YOUTH_READ_VIDEO_013 }}
       TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -34,7 +34,7 @@ jobs:
         run: |
           node js/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_011 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_VIDEO_011 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME4 }}
 
       - name: '运行 【中青看点自动阅读二】'
@@ -42,7 +42,7 @@ jobs:
         run: |
           node js/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_012 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_VIDEO_012 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME4 }}
 
       - name: '运行 【中青看点自动阅读三】'
@@ -50,8 +50,5 @@ jobs:
         run: |
           node js/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ_013 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_VIDEO_013 }}
           YOUTH_ATIME: ${{ secrets.YOUTH_ATIME4 }}
-
-
-
