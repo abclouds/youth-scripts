@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # 每日早9点到晚8点每2小时运行一次
 
-name: 中青自动阅读(视频3)
+name: 中青自动阅读(视频4)
 
 on:
   workflow_dispatch:
